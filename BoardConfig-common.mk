@@ -52,12 +52,24 @@ BOARD_KERNEL_CMDLINE += loop.max_part=7
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
 
+# Kernel
+BOARD_KERNEL_IMAGE_NAME := Image.lz4
+KERNEL_LD := LD=ld.lld
+TARGET_COMPILE_WITH_MSM_KERNEL := true
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    DTC=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc \
+    MKDTIMG=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/libufdt/mkdtimg
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CONFIG := floral_defconfig
+TARGET_KERNEL_SOURCE := kernel/google/coral
+TARGET_NEEDS_DTBOIMAGE := true
+
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 # DTBO partition definitions
-BOARD_PREBUILT_DTBOIMAGE := device/google/coral-kernel/dtbo.img
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 
 TARGET_NO_KERNEL := false
@@ -221,8 +233,6 @@ BOARD_GOOGLE_DYNAMIC_PARTITIONS_SIZE := 4873781248
 
 # Set error limit to BOARD_SUPER_PARTITON_SIZE - 100MB
 BOARD_SUPER_PARTITION_ERROR_LIMIT := 9651093504
-
-BOARD_PREBUILT_DTBIMAGE_DIR := device/google/coral-kernel
 
 # Testing related defines
 BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/c2f2-setup.sh
