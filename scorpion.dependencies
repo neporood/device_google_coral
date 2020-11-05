@@ -2,5 +2,9 @@
   {
     "repository": "kernel_google_msm-4.14",
     "target_path": "kernel/google/msm-4.14"
+  },
+  {
+    "repository": "packages_apps_ElmyraService",
+    "target_path": "packages/apps/ElmyraService"
   }
 ]
