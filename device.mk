@@ -491,6 +491,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     NowPlayingOverlay
 
+# Elmyra
+PRODUCT_PACKAGES += \
+    ElmyraService
+
 # Disable OMX
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.media.omx=0 \
