@@ -487,10 +487,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.stagefright.ccodec=4 \
     debug.stagefright.omx_default_rank=512 \
 
-# Elmyra
-PRODUCT_PACKAGES += \
-    ElmyraService
-
 # Now Playing
 PRODUCT_PACKAGES += \
     NowPlayingOverlay
