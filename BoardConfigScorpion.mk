@@ -23,3 +23,7 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Verified Boot
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+
+#   Battery
+BOARD_SEPOLICY_DIRS += hardware/google/pixel-sepolicy/googlebattery
+BOARD_SEPOLICY_DIRS += hardware/google/pixel-sepolicy/turbo_adapter
