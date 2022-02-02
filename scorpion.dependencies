@@ -18,10 +18,5 @@
    "repository":  "vendor_google_coral",
    "target_path": "vendor/google/coral",
    "branch":      "sr5"
- },
- {
-   "repository":  "vendor_gapps",
-   "target_path": "vendor/gapps",
-   "branch":      "sr5"
  }
 ]
