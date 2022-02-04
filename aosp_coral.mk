@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 
+include device/google/coral/device-lineage.mk
 #
 # All components inherited here go to system image
 #
@@ -63,8 +64,25 @@ ifneq (REL,$(PLATFORM_VERSION_CODENAME))
   PRODUCT_PACKAGES += com.android.vndk.current.on_vendor
 endif
 
+# Device identifier. This must come after all inclusions
+
 PRODUCT_MANUFACTURER := Google
-PRODUCT_BRAND := Android
+PRODUCT_BRAND := google
+PRODUCT_MODEL := Pixel 4 XL
 PRODUCT_NAME := aosp_coral
 PRODUCT_DEVICE := coral
-PRODUCT_MODEL := AOSP on coral
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2960
+TARGET_SCREEN_WIDTH := 1440
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_PRODUCT=coral \
+    PRIVATE_BUILD_DESC="coral-user 12 SQ1A.220105.002 7961164 release-keys"
+
+BUILD_FINGERPRINT := google/coral/coral:12/SQ1A.220105.002/7961164:user/release-keys
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=google/coral/coral:12/SQ1A.220105.002/7961164:user/release-keys
+
+$(call inherit-product, vendor/google/coral/coral-vendor.mk)
