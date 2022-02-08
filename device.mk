@@ -1005,4 +1005,8 @@ include hardware/google/pixel/citadel/citadel.mk
 # Pixel Logger
 include hardware/google/pixel/PixelLogger/PixelLogger.mk
 
+# HBM
+PRODUCT_PACKAGES += \
+    HbmSVManagerOverlay
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota_retrofit.mk)
