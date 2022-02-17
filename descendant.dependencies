@@ -1,0 +1,20 @@
+[
+  {
+    "repository": "LineageOS/android_kernel_google_msm-4.14",
+    "target_path": "kernel/google/msm-4.14",
+    "branch": "lineage-19.0",
+    "remote": "github"
+  },
+  {
+    "repository" : "android/vendor-blobs/vendor_google_coral",
+    "target_path": "vendor/google/coral",
+    "branch": "twelve",
+    "remote": "pixel-gitlab"
+  },
+  {
+    "repository": "ProtonAOSP/android_packages_apps_ElmyraService",
+    "target_path": "packages/apps/ElmyraService",
+    "branch": "sc",
+    "remote": "github"
+  }
+]
