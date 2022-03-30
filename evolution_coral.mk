@@ -1,3 +1,4 @@
+
 #
 # Copyright (C) 2020-2021 The LineageOS Project
 #
@@ -5,17 +6,21 @@
 #
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+TARGET_FACE_UNLOCK_SUPPORTED := false
+TARGET_SUPPORTS_QUICK_TAP := true
 
 # Inherit device configuration
 $(call inherit-product, device/google/coral/aosp_coral.mk)
 
 include device/google/coral/coral/device-lineage.mk
 
+
+
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 4 XL
-PRODUCT_NAME := lineage_coral
+PRODUCT_NAME := evolution_coral
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2960
