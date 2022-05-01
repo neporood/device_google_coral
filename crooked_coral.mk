@@ -25,6 +25,8 @@
 $(call inherit-product, vendor/crooked/config/common.mk)
 $(call inherit-product, vendor/crooked/config/gsm.mk)
 
+TARGET_FACE_UNLOCK_SUPPORTED := false
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/google/coral/aosp_coral.mk)
 
