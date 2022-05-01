@@ -88,8 +88,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
 
 # Enforce privapp-permissions whitelist
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.control_privapp_permissions=enforce
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    ro.control_privapp_permissions=enforce
 
 PRODUCT_PACKAGES += \
     messaging
@@ -486,10 +486,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.media.codec2=2 \
     debug.stagefright.ccodec=4 \
     debug.stagefright.omx_default_rank=512 \
-
-# Now Playing
-PRODUCT_PACKAGES += \
-    NowPlayingOverlay
 
 # Disable OMX
 PRODUCT_PROPERTY_OVERRIDES += \
