@@ -16,6 +16,8 @@
 
 PRODUCT_HARDWARE := coral
 
+PRODUCT_VENDOR_KERNEL_HEADERS := device/google/coral-kernel/sm8150/kernel-headers
+
 include device/google/coral/device-common.mk
 
 DEVICE_PACKAGE_OVERLAYS += device/google/coral/coral/overlay
@@ -41,3 +43,6 @@ PRODUCT_PACKAGES += \
 # Setup wizard overlay packages for ActiveEdge
 PRODUCT_PACKAGES += \
     PixelSetupWizardOverlayActiveEdge \
+
+# Parts
+$(call inherit-product-if-exists, vendor/google/pixelparts/pixelparts.mk)
